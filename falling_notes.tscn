@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://ciyiffllw77cl"]
+
+[ext_resource type="Script" uid="uid://2f0r64dv2pca" path="res://scripts/FallingNotes.gd" id="1_2qd5d"]
+[ext_resource type="Texture2D" uid="uid://bv034sxy146q3" path="res://assets/arrows/arrow left.png" id="2_rn5ms"]
+[ext_resource type="Texture2D" uid="uid://dq1jqdp1gy3u3" path="res://assets/arrows/arrow down.png" id="3_hkycs"]
+[ext_resource type="Texture2D" uid="uid://dpj6o6u01s4xq" path="res://assets/arrows/arrow up.png" id="4_bpg17"]
+[ext_resource type="Texture2D" uid="uid://bsf2xkud16q5v" path="res://assets/arrows/arrow right.png" id="5_sd6r8"]
+[ext_resource type="Texture2D" uid="uid://5o5so4bnud7g" path="res://assets/background.png" id="6_hkycs"]
+[ext_resource type="AudioStream" uid="uid://dj2v3sm2icr0l" path="res://assets/Music1.wav" id="7_sd6r8"]
+
+[node name="FallingNotes" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 35.0
+offset_top = -158.0
+offset_right = 237.0
+offset_bottom = -63.0
+script = ExtResource("1_2qd5d")
+left_tex = ExtResource("2_rn5ms")
+down_tex = ExtResource("3_hkycs")
+up_tex = ExtResource("4_bpg17")
+right_tex = ExtResource("5_sd6r8")
+note_scale = 5.0
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(540, 480.375)
+scale = Vector2(5.77, 6.4925)
+texture = ExtResource("6_hkycs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_sd6r8")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(541, 482)
