@@ -1,0 +1,153 @@
+[gd_scene load_steps=24 format=3 uid="uid://bfas7o4guno1t"]
+
+[ext_resource type="Script" uid="uid://dy8sepbbpkn47" path="res://scripts/boss_2.gd" id="1_wyafe"]
+[ext_resource type="Texture2D" uid="uid://bv034sxy146q3" path="res://assets/arrows/arrow left.png" id="2_b5x57"]
+[ext_resource type="Texture2D" uid="uid://dq1jqdp1gy3u3" path="res://assets/arrows/arrow down.png" id="3_0k5cg"]
+[ext_resource type="Texture2D" uid="uid://dpj6o6u01s4xq" path="res://assets/arrows/arrow up.png" id="4_k0f4d"]
+[ext_resource type="Texture2D" uid="uid://bsf2xkud16q5v" path="res://assets/arrows/arrow right.png" id="5_hejp6"]
+[ext_resource type="AudioStream" uid="uid://br8n0vkwiimr" path="res://assets/Music/Music7.wav" id="6_b5x57"]
+[ext_resource type="Texture2D" uid="uid://ceck4n2xe536m" path="res://assets/Doggo/idle_doggo.png" id="6_k0f4d"]
+[ext_resource type="Texture2D" uid="uid://bhugctevklkmu" path="res://assets/BsssSevenBackground.png" id="8_hejp6"]
+[ext_resource type="Texture2D" uid="uid://ckpehqdqlqygb" path="res://assets/Enemy animations/Giraffe.png" id="9_hejp6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2pyj"]
+atlas = ExtResource("6_k0f4d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xg8h"]
+atlas = ExtResource("6_k0f4d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63f3r"]
+atlas = ExtResource("6_k0f4d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlcpc"]
+atlas = ExtResource("6_k0f4d")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjk6j"]
+atlas = ExtResource("6_k0f4d")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7bbt"]
+atlas = ExtResource("6_k0f4d")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1d4hi"]
+atlas = ExtResource("6_k0f4d")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uvtyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2pyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xg8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63f3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlcpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjk6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7bbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1d4hi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvtyi"]
+atlas = ExtResource("9_hejp6")
+region = Rect2(0, 0, 50, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2g0g"]
+atlas = ExtResource("9_hejp6")
+region = Rect2(50, 0, 50, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w4xj"]
+atlas = ExtResource("9_hejp6")
+region = Rect2(100, 0, 50, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe7no"]
+atlas = ExtResource("9_hejp6")
+region = Rect2(150, 0, 50, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6h56"]
+atlas = ExtResource("9_hejp6")
+region = Rect2(200, 0, 50, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_btr8i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvtyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2g0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w4xj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe7no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6h56")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -148.0
+offset_top = 66.0
+offset_right = -148.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wyafe")
+left_tex = ExtResource("2_b5x57")
+down_tex = ExtResource("3_0k5cg")
+up_tex = ExtResource("4_k0f4d")
+right_tex = ExtResource("5_hejp6")
+note_scale = 5.0
+bpm = 90.0
+song_offset_ms = 6.0
+spawn_lookahead_sec = 2.0
+timing_line_y_factor = 0.5
+
+[node name="Song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_b5x57")
+
+[node name="BsssSevenBackground" type="Sprite2D" parent="."]
+position = Vector2(723, 263)
+scale = Vector2(11.5, 13)
+texture = ExtResource("8_hejp6")
+
+[node name="Doggo" type="AnimatedSprite2D" parent="."]
+position = Vector2(373, 352)
+scale = Vector2(10.5, 9.82813)
+sprite_frames = SubResource("SpriteFrames_uvtyi")
+frame_progress = 0.283662
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1118, 338)
+scale = Vector2(3.84, 3.635)
+sprite_frames = SubResource("SpriteFrames_btr8i")
+frame_progress = 0.629251

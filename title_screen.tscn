@@ -8,6 +8,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 8.0
+offset_right = 22.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fhlg3")
@@ -16,16 +20,35 @@ script = ExtResource("1_fhlg3")
 layout_mode = 0
 offset_left = 343.0
 offset_top = 182.0
-offset_right = 700.0
+offset_right = 708.0
 offset_bottom = 283.0
-text = "start"
+disabled = true
+text = "story mode
+(work in progress, use play songs)"
+
+[node name="Game Select" type="Button" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 317.0
+offset_right = 708.0
+offset_bottom = 448.0
+text = "Play songs"
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 475.0
+offset_right = 695.0
+offset_bottom = 581.0
+text = "Credits"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 87.0
-offset_right = 588.0
-offset_bottom = 148.0
+offset_left = 434.0
+offset_top = 56.0
+offset_right = 640.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 30
 text = "Dogs and Bats"
 
 [node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="."]
@@ -33,3 +56,5 @@ stream = ExtResource("2_gtuqw")
 autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Game Select" to="." method="_on_game_select_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

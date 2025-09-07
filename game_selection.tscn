@@ -1,0 +1,132 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjxvk42dliq8k"]
+
+[ext_resource type="Script" uid="uid://bt0frpym46nil" path="res://scripts/game_selection.gd" id="1_v2c4t"]
+[ext_resource type="AudioStream" uid="uid://b805pps6fbil4" path="res://assets/Music/SongSelect.wav" id="2_7macw"]
+
+[node name="Game selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 8.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v2c4t")
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7macw")
+autoplay = true
+
+[node name="First Boss" type="Button" parent="."]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 49.0
+offset_right = 643.0
+offset_bottom = 135.0
+text = "The Batty Boys
+(95% Finished)"
+
+[node name="Second Boss" type="Button" parent="."]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 163.0
+offset_right = 639.0
+offset_bottom = 262.0
+disabled = true
+text = "Slowth Imporium
+(Not Started)"
+
+[node name="Third boss" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 240.0
+offset_top = 288.0
+offset_right = 651.0
+offset_bottom = 383.0
+disabled = true
+text = "Punk Times
+(Not Started)"
+
+[node name="Fourth Boss" type="Button" parent="."]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 409.0
+offset_right = 651.0
+offset_bottom = 495.0
+disabled = true
+text = "Hip-Hip Hoppy
+(Not Started)"
+
+[node name="Fifth Boss" type="Button" parent="."]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 530.0
+offset_right = 652.0
+offset_bottom = 619.0
+disabled = true
+text = "Buck Off
+(Not Started)"
+
+[node name="Sixth Boss" type="Button" parent="."]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 48.0
+offset_right = 1074.0
+offset_bottom = 132.0
+disabled = true
+text = "Good Goobly Moobly
+(Not Started)"
+
+[node name="Seventh Boss" type="Button" parent="."]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 165.0
+offset_right = 1071.0
+offset_bottom = 251.0
+text = "Girfato
+(75% completed)"
+
+[node name="Eigjth Boss" type="Button" parent="."]
+layout_mode = 0
+offset_left = 749.0
+offset_top = 283.0
+offset_right = 1073.0
+offset_bottom = 364.0
+disabled = true
+text = "Ska-Kana
+(Not Started)"
+
+[node name="Ninth Boss" type="Button" parent="."]
+layout_mode = 0
+offset_left = 746.0
+offset_top = 399.0
+offset_right = 1075.0
+offset_bottom = 489.0
+disabled = true
+text = "lorem ipsum
+(Not Started)"
+
+[node name="Tenth Boss" type="Button" parent="."]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 521.0
+offset_right = 1068.0
+offset_bottom = 615.0
+disabled = true
+text = "The Batty Boys Reprise
+(Not Started)"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 540.0
+offset_right = 166.0
+offset_bottom = 613.0
+text = "<- Back"
+
+[connection signal="pressed" from="First Boss" to="." method="_on_first_boss_pressed"]
+[connection signal="pressed" from="Seventh Boss" to="." method="_on_seventh_boss_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
